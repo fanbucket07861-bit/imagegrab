@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "图提取 ImageGrab · 电商图片助手",
+  "version": "1.0.0",
+  "description": "在淘宝、天猫、京东和拼多多商品详情页提取商品图片，集中预览、自由勾选并批量保存为 PNG。",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "downloads", "storage", "offscreen"],
+  "host_permissions": [
+    "*://*.taobao.com/*", "*://*.tmall.com/*", "*://*.jd.com/*",
+    "*://*.pinduoduo.com/*", "*://*.yangkeduo.com/*",
+    "*://*.alicdn.com/*", "*://*.taobaocdn.com/*", "*://*.360buyimg.com/*",
+    "*://*.jdimg.com/*", "*://*.pddpic.com/*", "*://*.pinduoduoimg.com/*",
+    "*://*.yangkeduoimg.com/*"
+  ],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "图提取 · 扫描当前商品页 / 打开图片库" },
+  "content_scripts": [{
+    "matches": [
+      "*://*.taobao.com/*", "*://*.tmall.com/*", "*://*.jd.com/*",
+      "*://*.pinduoduo.com/*", "*://*.yangkeduo.com/*"
+    ],
+    "js": ["content.js"],
+    "css": ["content.css"],
+    "run_at": "document_idle",
+    "all_frames": true,
+    "match_about_blank": true
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; base-uri 'none';"
+  }
+}

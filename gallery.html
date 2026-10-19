@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>图片库 · 图提取 ImageGrab</title><link rel="stylesheet" href="gallery.css"><script src="gallery.js" defer></script></head>
+<body>
+  <header class="topbar"><a class="brand" href="gallery.html" aria-label="图提取图片库"><span class="brand-icon" aria-hidden="true">▧</span>图提取 <small>IMAGEGRAB</small></a><span class="private">本地处理 · PNG 导出</span></header>
+  <main>
+    <div class="heading"><div><p class="eyebrow">YOUR PRODUCT IMAGE LIBRARY</p><h1>好图片，一处收好。</h1><p id="source-title">打开商品详情页，点击「获取图片」开始。</p><a id="source-link" class="source-link" hidden target="_blank" rel="noreferrer">返回商品详情页 ↗</a></div><div class="count-block"><strong id="image-count">0</strong><span>张商品图片</span></div></div>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <section id="progress-panel" class="progress-panel" hidden aria-label="下载进度"><div><strong id="progress-title">准备下载</strong><span id="progress-text"></span></div><progress id="download-progress" value="0" max="1"></progress><p id="progress-detail">图片将在后台转换后下载。</p><button id="retry-download" class="text-button" hidden>重新选择失败图片</button></section>
+    <section class="toolbar" aria-label="图片选择工具"><div class="select-actions"><label><input type="checkbox" id="select-all">全选</label><button id="invert" class="text-button">反选</button><span class="separator"></span><span>已选 <strong id="selected-count">0</strong> 张</span></div><div class="download-actions"><span id="validation-status" role="status"></span><button id="download" class="primary-button" disabled>↓ 下载选中 <span>PNG</span></button></div></section>
+    <div id="permission-panel" class="notice permission" hidden><p>部分图片使用额外的图片域名，授权后可继续核验和下载。</p><button id="grant-permission" class="secondary-button">授权图片域名</button></div>
+    <section id="gallery" class="gallery" aria-label="商品图片列表"></section>
+    <section id="empty" class="empty" hidden><span class="empty-mark" aria-hidden="true">▧</span><h2>这里，等待你的第一组图片</h2><p id="empty-message">在淘宝、天猫、京东或拼多多商品详情页点击右下角「获取图片」。安装扩展后，请先刷新已经打开的商品页。</p></section>
+    <section id="failures-panel" class="failures" hidden><details><summary id="failures-summary">无法读取的图片</summary><p>可先回到商品页确认图片已加载，再重试。需要登录、禁止外链或已失效的图片可能无法读取。</p><ul id="failures-list"></ul><button id="retry-preview" class="secondary-button">重试读取失败图片</button></details></section>
+    <footer class="gallery-footer"><span>支持 JPG / WebP / AVIF 等浏览器可解码格式，统一转换为 PNG。</span><span>保留原始尺寸 · 最小 100 × 100</span></footer>
+  </main>
+  <dialog id="lightbox"><button id="close-lightbox" aria-label="关闭大图预览">×</button><img id="lightbox-image" alt="商品图片放大预览"><p id="lightbox-caption"></p><a id="original-link" target="_blank" rel="noreferrer">查看原图 ↗</a></dialog>
+</body></html>

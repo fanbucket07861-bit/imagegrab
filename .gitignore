@@ -1,0 +1,19 @@
+tests/.browser-profile/
+tests/.browser-profile-*/
+tests/artifacts/downloads/
+tests/artifacts/screenshots/
+node_modules/
+*.log
+
+# Local configuration, credentials, and editor caches
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]

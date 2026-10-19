@@ -1,0 +1,13 @@
+/* 所有规则限制在扩展节点内，不修改商家页面的样式。 */
+#imagegrab-float { all: initial; position: fixed; right: 24px; bottom: 108px; z-index: 2147483646; display: flex; align-items: center; padding: 5px; gap: 2px; border: 1px solid #ffffff55; border-radius: 18px; background: #3936c7; box-shadow: 0 7px 26px #26235e35; font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif; color: white; }
+#imagegrab-float button { all: unset; box-sizing: border-box; cursor: pointer; color: white; font: 600 14px/1.4 -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif; border-radius: 12px; transition: background .2s, transform .2s; }
+#imagegrab-float button:hover { background: #ffffff24; }
+#imagegrab-float button:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+#imagegrab-float .ig-get { padding: 11px 13px; display: flex; align-items: center; gap: 8px; }
+#imagegrab-float .ig-drag { padding: 9px 5px; cursor: grab; touch-action: none; color: #ffffffa8; }
+#imagegrab-float .ig-close { padding: 8px; font-size: 19px; font-weight: 400; }
+#imagegrab-float .ig-get:hover { transform: translateY(-1px); }
+#imagegrab-float svg { width: 19px; height: 19px; flex-shrink: 0; }
+#imagegrab-toast { all: initial; position: fixed; right: 24px; bottom: 177px; z-index: 2147483646; box-sizing: border-box; max-width: min(350px, calc(100vw - 32px)); padding: 14px 18px; border: 1px solid #e4e4ed; background: white; border-radius: 12px; color: #26263d; box-shadow: 0 8px 30px #18183620; font: 13px/1.6 -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif; }
+@media (max-width: 480px) { #imagegrab-float { right: 14px; bottom: 140px; } #imagegrab-toast { right: 14px; bottom: 210px; } }
+@media (prefers-reduced-motion: reduce) { #imagegrab-float button { transition: none; } }
